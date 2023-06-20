@@ -1,5 +1,5 @@
 .boton-contenedor {
-  height: 83px;
+	height: 83px;
 	display: flex;
 	flex: 1 1;
 	justify-content: center;
@@ -20,9 +20,9 @@
 }
 
 .operador {
-	background-color: #00471b;
+	background-color: orange;
 }
 
 .operador:hover {
-	background-color: orange;
+	background-color: rgb(255, 102, 0);
 }
