@@ -6,7 +6,7 @@
 	align-items: center;
 	font-weight: bold;
 	font-size: 38px;
-	background-color: #1b1b32;
+	background-color: #4a4a4a;
 	color: white;
 	border-radius: 25px;
 	border: 2px solid white;
@@ -16,13 +16,22 @@
 }
 
 .boton-contenedor:hover {
-	background-color: purple;
+	background-color: rgb(33, 33, 33);
 }
 
 .operador {
-	background-color: orange;
+	background-color: rgb(33, 33, 33);
 }
 
 .operador:hover {
-	background-color: rgb(255, 102, 0);
+	background-color: #4a4a4a;
 }
+
+.boton-resultado {
+	background-color: rgb(142, 220, 220);
+	color: rgb(33, 33, 33);
+}
+.boton-resultado:hover {
+	background-color: rgb(110, 170, 170);
+}
+

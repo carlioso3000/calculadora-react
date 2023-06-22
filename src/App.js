@@ -3,15 +3,22 @@ import freecodecampLogo from "./imagenes/freecodecamp-logo.png"
 import Boton from "./componentes/Boton"
 import Pantalla from "./componentes/Pantalla"
 import BotonClear from './componentes/BotonClear';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { evaluate } from 'mathjs';
 
 function App() {
 
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("0")
+  const [ultimaOperacion, setUltimaOperacion] = useState(null)
 
   const agregarInput = valor => {
-    setInput(input + valor)
+    if(input.length < 15) {
+      if(input === "0" && valor !== "."){
+        setInput(valor)
+      } else {
+        setInput(input + valor)
+    }
+    }
   };
 
   // Para hacer que cada vez que pulsemos un boton llame a la funcion
@@ -22,13 +29,39 @@ function App() {
 
 const calcularResultado = () => {
   if(input) {
-    setInput(evaluate(input))
+    setInput(evaluate(input.toString()))
   } else {
-    alert("Ingrese una operacion valida")
+    alert("No fuiste a la escuela? Ingresa una operacion valida")
   }
 };
 
+/////////
 
+useEffect(() => {
+  const handleKeyDown = (event) => {
+    if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 96 && event.keyCode <= 105) {
+      agregarInput(event.key);
+    } else if (event.keyCode === 107 || event.keyCode === 187) {
+      agregarInput("+");
+    } else if (event.keyCode === 109 || event.keyCode === 189) {
+      agregarInput("-");
+    } else if (event.keyCode === 106) {
+      agregarInput("*");
+    } else if (event.keyCode === 111 || event.keyCode === 191) {
+      agregarInput("/");
+    } else if (event.keyCode === 13 || event.keyCode === 187) {
+      calcularResultado();
+    }
+  };
+
+  document.addEventListener("keydown", handleKeyDown);
+
+  return () => {
+    document.removeEventListener("keydown", handleKeyDown);
+  };
+}, [input]);
+
+/////////
 
 
 
@@ -74,7 +107,7 @@ const calcularResultado = () => {
 
         <div className="fila">
           
-        <BotonClear manejarClear={() => setInput("")}>
+        <BotonClear manejarClear={() => setInput("0")}>
             C
           </BotonClear>
           <Boton manejarClic={agregarInput}>0</Boton>
