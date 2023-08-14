@@ -3,8 +3,8 @@ import "../hoja-de-estilos/Pantalla.css"
 
 //componente como funcion flecha ({prop.aqui})
 
-const Pantalla = ({ input }) => (
-	<div className="input">
+const Pantalla = ({ input, id }) => (
+	<div id={id} className="input">
 		{input}
 	</div>
 )

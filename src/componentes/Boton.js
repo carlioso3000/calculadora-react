@@ -16,6 +16,7 @@ function Boton(props) {
 
 		return (
 			<div 
+				id={props.id}
 				className={`boton-contenedor ${obtenerClaseBoton(props.children)}`.trimEnd()}
 				onClick={() => props.manejarClic(props.children)}
 				>

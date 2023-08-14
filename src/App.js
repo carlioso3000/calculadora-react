@@ -78,47 +78,47 @@ useEffect(() => {
       <div className="contenedor-calculadora">
     
     {/* primer input, prop. Segundo input nombre variable de estado. No tienen porque ser iguales*/}
-        <Pantalla input={input} />
+        <Pantalla id="display" input={input} />
 
 
 
         <div className="fila">
-          <Boton manejarClic={agregarInput}>7</Boton>
-          <Boton manejarClic={agregarInput}>8</Boton>
-          <Boton manejarClic={agregarInput}>9</Boton>
-          <Boton manejarClic={agregarInput}>/</Boton>
+          <Boton id="seven" manejarClic={agregarInput}>7</Boton>
+          <Boton id="eigth" manejarClic={agregarInput}>8</Boton>
+          <Boton id="nine" manejarClic={agregarInput}>9</Boton>
+          <Boton id="divide"  manejarClic={agregarInput}>/</Boton>
         </div>
 
         <div className="fila">
-          <Boton manejarClic={agregarInput}>4</Boton>
-          <Boton manejarClic={agregarInput}>5</Boton>
-          <Boton manejarClic={agregarInput}>6</Boton>
-          <Boton manejarClic={agregarInput}>*</Boton>
+          <Boton id="four" manejarClic={agregarInput}>4</Boton>
+          <Boton id="five" manejarClic={agregarInput}>5</Boton>
+          <Boton id="six" manejarClic={agregarInput}>6</Boton>
+          <Boton id="multiply" manejarClic={agregarInput}>*</Boton>
 
         </div>
 
         <div className="fila">
-          <Boton manejarClic={agregarInput}>1</Boton>
-          <Boton manejarClic={agregarInput}>2</Boton>
-          <Boton manejarClic={agregarInput}>3</Boton>
-          <Boton manejarClic={agregarInput}>-</Boton>
+          <Boton id="one" manejarClic={agregarInput}>1</Boton>
+          <Boton id="two" manejarClic={agregarInput}>2</Boton>
+          <Boton id="three" manejarClic={agregarInput}>3</Boton>
+          <Boton id="subtract" manejarClic={agregarInput}>-</Boton>
 
         </div>
 
         <div className="fila">
           
-        <BotonClear manejarClear={() => setInput("0")}>
+        <BotonClear id="clear" manejarClear={() => setInput("0")}>
             C
           </BotonClear>
-          <Boton manejarClic={agregarInput}>0</Boton>
-          <Boton manejarClic={agregarInput}>.</Boton>
-          <Boton manejarClic={agregarInput}>+</Boton>
+          <Boton id="zero" manejarClic={agregarInput}>0</Boton>
+          <Boton id="decimal" manejarClic={agregarInput}>.</Boton>
+          <Boton id="add" manejarClic={agregarInput}>+</Boton>
 
         </div>
 
         <div className="fila">
           
-        <Boton manejarClic={calcularResultado}>=</Boton>
+        <Boton id="equals" manejarClic={calcularResultado}>=</Boton>
 
         </div>
 
